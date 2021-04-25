@@ -94,9 +94,9 @@ class EventResource(Resource):
         return Event.query.all()
 
 
-api.add_resource(TodayEventsResource, '/event/today')
-api.add_resource(EventResource, '/event')
-api.add_resource(EventByID, '/event/<int:id>')
+api.add_resource(TodayEventsResource, '/api/event/today')
+api.add_resource(EventResource, '/api/event')
+api.add_resource(EventByID, '/api/event/<int:id>')
 
 
 if __name__ == '__main__':
