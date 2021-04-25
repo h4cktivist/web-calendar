@@ -55,6 +55,19 @@ class EventByID(Resource):
             abort(404, "The event doesn't exist!")
         return event
 
+    def put(self, id):
+        args = parser.parse_args()
+        event = Event.query.filter(Event.id == id).first()
+
+        if event is None:
+            abort(404, "The event doesn't exist!")
+
+        event.event = f"{args['event']}"
+        event.date = args['date'].date()
+        db.session.commit()
+
+        return {"message": "The event has been updated"}
+
     def delete(self, id):
         event = Event.query.filter(Event.id == id).first()
         if event is None:
