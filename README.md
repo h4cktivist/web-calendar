@@ -8,6 +8,8 @@
 3. Get all events by date range (by set params `start_time` and `end_time` to `/event`)
 4. Get all todays events (by GET on `api/event/today`)
 5. Delete single event using it's ID (by DELETE on `api/event/id`)
+6. Update single event using it's ID (by PUT on `api/event/id`)
+
 
 ## Install
 ```sh
